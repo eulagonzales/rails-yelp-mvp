@@ -1,0 +1,22 @@
+<h1>Restaurants#show</h1>
+<p>Find me in app/views/restaurants/show.html.erb</p>
+<hr>
+<div class="text-center mt-5">
+  <p><strong>Name:</strong>
+    <%= @restaurant.name %></p>
+      <p><strong>Category:</strong>
+    <%= @restaurant.category %></p>
+      <p><strong>Address:</strong>
+    <%= @restaurant.address %></p>
+    <p><%= link_to 'Add a Review', new_restaurant_review_path(@restaurant) %></p>
+    <p><%= link_to 'Home page', restaurants_path%></p>
+</div>
+
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item justify-space-between">
+      <%= review.content %>
+      <span><strong>Rating </strong><%= review.rating %></span>
+    </li>
+  <% end %>
+</ul>

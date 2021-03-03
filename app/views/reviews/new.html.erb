@@ -1,0 +1,11 @@
+<h1>Reviews#new</h1>
+<p>Find me in app/views/reviews/new.html.erb</p>
+<hr>
+<div class="text-center p-5 m-5">
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating %>
+    <%= f.button :submit %>
+  <% end %>
+  <p><%= link_to 'Home page', restaurants_path%></p>
+</div>
